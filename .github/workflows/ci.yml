@@ -19,4 +19,3 @@ jobs:
       - run: yarn test
 #      - run: docker pull mythril/myth
       - run: find ./contracts/ -name *.sol | grep -v 'interfaces' | xargs -n 1 -P 8 sh -c 'docker run -v $(pwd):/tmp mythril/myth -v4 analyze "/tmp/$0" --solv 0.8.3 --max-depth=32'
-      - run: yarn coverage
