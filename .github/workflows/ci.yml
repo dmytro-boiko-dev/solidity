@@ -15,8 +15,6 @@ jobs:
         with:
           node-version: 14.x
       - run: yarn
-      - run: yarn lint:sol
-      - run: yarn lint:js
       - run: yarn build
       - run: yarn test
 #      - run: docker pull mythril/myth
