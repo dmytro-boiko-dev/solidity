@@ -1,15 +1,28 @@
-# Basic Sample Hardhat Project
+# Solidity Example Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Hello!  
+This is my example project with simple logic just for demonstrate Solidity using
 
-Try running some of the following tasks:
+Stack used:
+- Solidity (0.8.3)
+- OpenZeppelin
+- Hardhat
+- Ethers
+- Chai
+- Gas reporter
+- Mythril
 
+### Tasks:
+
+Compile contracts:
 ```shell
-npx hardhat accounts
 npx hardhat compile
-npx hardhat clean
+```
+Run tests:
+```shell
 npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+```
+Deploy contracts:
+```shell
+npx hardhat run ./scripts/deploy.js
 ```

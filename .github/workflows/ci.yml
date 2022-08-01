@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request: { }
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - run: yarn
+      - run: yarn lint:sol
+      - run: yarn lint:js
+      - run: yarn build
+      - run: yarn test
+#      - run: docker pull mythril/myth
+      - run: find ./contracts/ -name *.sol | grep -v 'interfaces' | xargs -n 1 -P 8 sh -c 'docker run -v $(pwd):/tmp mythril/myth -v4 analyze "/tmp/$0" --solv 0.8.3 --max-depth=32'
+      - run: yarn coverage
