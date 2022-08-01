@@ -1,4 +1,5 @@
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.3;
 
 import '@openzeppelin/contracts/utils/structs/EnumerableSet.sol';
 import '@openzeppelin/contracts/utils/Counters.sol';
@@ -44,11 +45,11 @@ contract EnumerableSetExample {
         return EnumerableSet.remove(indexSet, index);
     }
 
-    function get(address _user, uint256 _tokenId) external returns (Token memory) {
+    function get(address _user, uint256 _tokenId) external view returns (Token memory) {
         return _get(_user, _tokenId);
     }
 
-    function _get(address _user, uint256 _tokenId) internal returns (Token memory) {
+    function _get(address _user, uint256 _tokenId) internal view returns (Token memory) {
         uint256 index = m_idToIndex[_tokenId];
 
         // check is token available for this user; O(1)

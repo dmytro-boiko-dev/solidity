@@ -1,4 +1,5 @@
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.3;
 
 library HeroLibrary {
 
@@ -9,6 +10,7 @@ library HeroLibrary {
     }
 
     struct Hero {
+        uint256 id;
         string name;
         uint256 strength;
         uint256 defence;
