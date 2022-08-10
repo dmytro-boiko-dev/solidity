@@ -18,4 +18,11 @@ jobs:
       - run: yarn build
       - run: yarn test
 #      - run: docker pull mythril/myth
-      - run: find ./contracts/ -name *.sol | grep -v 'interfaces' | xargs -n 1 -P 8 sh -c 'docker run -v $(pwd):/tmp mythril/myth -v4 analyze "/tmp/$0" --solv 0.8.12 --max-depth=32'
+#      - run: find ./contracts/ -name *.sol | grep -v 'interfaces' | xargs -n 1 -P 8 sh -c 'docker run -v $(pwd):/tmp mythril/myth -v4 analyze "/tmp/$0" --solv 0.8.12 --max-depth=32'
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crytic/slither-action@v0.1.1
+        with:
+          target: 'contracts/'
