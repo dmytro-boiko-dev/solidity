@@ -1,6 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.12;
 
+/**
+ * @notice THIS IS EXAMPLE WITH A LOT OF ISSUES
+ * @notice PLEASE SEE THE AUDIT REPORT IN THE "REPORTS" FOLDER
+ * @dev THIS CONTRACT IS FULL OF ERRORS
+*/
+
 interface IERC20DetailedBurnable {
     function decimals() external view returns (uint8);
 

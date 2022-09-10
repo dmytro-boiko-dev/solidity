@@ -26,3 +26,18 @@ Deploy contracts:
 ```shell
 npx hardhat run ./scripts/deploy.js
 ```
+
+### Audit example:
+
+Here is audit example for staking contract
+
+You can find audit report at:
+```shell
+reports/Audit_Report_Example-Staking_contract.pdf
+```
+
+You can find Staking contract at:
+```shell
+contracts/audit/Staking.sol
+```
+**NOTICE: this is example, and it is full of errors!**
